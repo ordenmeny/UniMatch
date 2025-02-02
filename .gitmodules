@@ -1,0 +1,3 @@
+[submodule "djangoProject"]
+	path = djangoProject
+	url = https://github.com/ordenmeny/UniMatch-django-backend.git
