@@ -18,7 +18,6 @@ media_dev
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.gitmodules
 
 # AWS User-specific
 .idea/**/aws.xml

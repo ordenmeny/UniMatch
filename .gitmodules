@@ -1,3 +1,6 @@
 [submodule "djangoProject"]
 	path = djangoProject
 	url = https://github.com/ordenmeny/UniMatch-django-backend.git
+[submodule "bot"]
+	path = bot
+	url = https://github.com/ordenmeny/Uni-Match-Bot.git
