@@ -1,7 +1,7 @@
 services:
   app:
     build:
-      context: djangoProject
+      context: ./djangoProject
     restart: always
     volumes:
       - static-data:/vol/web/static
@@ -16,8 +16,6 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
-      - DEBUG=${DEBUG}
-      - SECRET_KEY=${SECRET_KEY}
       - DOCKER_PROJECT=1
 
   db:
@@ -38,7 +36,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    
+
   proxy:
     build:
       context: ./proxy
@@ -50,14 +48,6 @@ services:
     volumes:
       - static-data:/vol/static
       - media-data:/vol/media
-  
-  bot:
-    build: 
-      context: ./bot
-    restart: always
-    env_file:
-      - .env
-
 
 volumes:
   db-data:
