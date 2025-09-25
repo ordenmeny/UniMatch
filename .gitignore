@@ -1,3 +1,6 @@
+bot/
+yandex-auth-test/
+
 # Django #
 *.log
 *.pot
