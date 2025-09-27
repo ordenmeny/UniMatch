@@ -1,12 +1,9 @@
 services:
   frontend-app:
     build:
-      context: ./UniMatch-frontend # папка с React-кодом
-      dockerfile: Dockerfile
-    # Нужен только для создания артефакта, не запускаем постоянно
-    command: ["true"]
+      context: ./UniMatch-frontend
     volumes:
-      - frontend-static:/app/build
+      - static-data:/vol/static/frontend
   app:
     build:
       context: ./djangoProject
@@ -53,8 +50,8 @@ services:
       - app
       - frontend-app
     ports:
-      - "80:8000"
-      - "80:80"
+      - "8000:8000"
+      - "80:5173"
     volumes:
       - static-data:/vol/static
       - media-data:/vol/media
@@ -63,4 +60,3 @@ volumes:
   db-data:
   static-data:
   media-data:
-  frontend-static:

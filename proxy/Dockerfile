@@ -9,6 +9,7 @@ ENV APP_HOST=app
 ENV APP_PORT=9000
 
 RUN mkdir -p /vol/static && \
+    mkdir -p /vol/static/frontend && \
     mkdir -p /vol/media && \
     chmod +x /run_nginx.sh
 
