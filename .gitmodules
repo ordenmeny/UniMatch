@@ -4,3 +4,6 @@
 [submodule "bot"]
 	path = bot
 	url = https://github.com/ordenmeny/Uni-Match-Bot.git
+[submodule "UniMatch-frontend"]
+	path = UniMatch-frontend
+	url = https://github.com/elogrus/UniMatch-frontend.git
