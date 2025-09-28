@@ -52,6 +52,7 @@ services:
     ports:
       - "8000:8000"
       - "80:80"
+      - "443:443"
     volumes:
       - static-data:/vol/static
       - media-data:/vol/media
