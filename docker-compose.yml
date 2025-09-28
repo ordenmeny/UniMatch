@@ -55,6 +55,7 @@ services:
     volumes:
       - static-data:/vol/static
       - media-data:/vol/media
+      - /etc/letsencrypt:/etc/letsencrypt:ro
 
 volumes:
   db-data:
