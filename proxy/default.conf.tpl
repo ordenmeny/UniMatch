@@ -1,13 +1,26 @@
 server {
     listen 80;
+    server_name unimatch.ru www.unimatch.ru;
 
-    charset utf-8;
+    # Все запросы на 80 → переадресация на https
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
 
+
+server {
+    listen 443 ssl;
+    server_name unimatch.ru www.unimatch.ru;
+
+    ssl_certificate /etc/letsencrypt/live/unimatch.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/unimatch.ru/privkey.pem;
+
+    # --- FRONTEND ---
     location / {
         proxy_pass http://frontend-app:5173/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
-        #proxy_set_header Connection upgrade;
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
