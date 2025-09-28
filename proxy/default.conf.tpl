@@ -28,8 +28,11 @@ server {
 
 
 server {
-    # the port your site will be served on (8000)
-    listen 8000;
+    listen 8000 ssl;
+    server_name unimatch.ru www.unimatch.ru;
+
+    ssl_certificate /etc/letsencrypt/live/unimatch.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/unimatch.ru/privkey.pem;
 
     charset     utf-8;
 
