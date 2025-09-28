@@ -7,4 +7,4 @@
 [submodule "UniMatch-frontend"]
 	path = UniMatch-frontend
 	url = https://github.com/elogrus/UniMatch-frontend.git
-	branch = ordenmeny_branch
+	branch = main
