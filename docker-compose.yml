@@ -37,7 +37,8 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD", "pg_isready", "-q", "-d", "devdb", "-U", "devuser"]
+      test:
+        ["CMD", "pg_isready", "-q", "-d", "unimatchdb", "-U", "postgresuser"]
       interval: 5s
       timeout: 5s
       retries: 5
