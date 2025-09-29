@@ -1,3 +1,4 @@
+backup_postgres.sh
 # Git
 .git
 .gitignore
