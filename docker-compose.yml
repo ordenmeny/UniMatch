@@ -3,7 +3,7 @@ services:
     build:
       context: ./UniMatch-frontend
     volumes:
-      - static-data:/vol/static/frontend
+      - frontend_dist:/app/dist
   app:
     build:
       context: ./djangoProject
@@ -57,9 +57,11 @@ services:
     volumes:
       - static-data:/vol/static
       - media-data:/vol/media
+      - frontend_dist:/usr/share/nginx/html:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
 volumes:
   db-data:
   static-data:
   media-data:
+  frontend_dist:

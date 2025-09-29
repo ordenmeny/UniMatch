@@ -16,14 +16,22 @@ server {
     ssl_certificate /etc/letsencrypt/live/unimatch.ru/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/unimatch.ru/privkey.pem;
 
-    # --- FRONTEND ---
+    # --- FRONTEND (React build) ---
+    root   /usr/share/nginx/html;
+    index  index.html;
+
     location / {
-        proxy_pass http://frontend-app:5173/;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
+        try_files $uri /index.html;
     }
+
+    # --- FRONTEND ---
+    #location / {
+    #    proxy_pass http://frontend-app:5173/;
+    #    proxy_http_version 1.1;
+    #    proxy_set_header Upgrade $http_upgrade;
+    #    proxy_set_header Host $host;
+    #    proxy_cache_bypass $http_upgrade;
+    #}
 }
 
 
