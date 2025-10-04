@@ -61,6 +61,12 @@ services:
       - frontend_dist:/usr/share/nginx/html:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
 
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
 volumes:
   db-data:
   static-data:
