@@ -59,5 +59,7 @@ server {
         uwsgi_pass          ${APP_HOST}:${APP_PORT};
         include             /etc/nginx/uwsgi_params;
         client_max_body_size 40M;
+        proxy_hide_header WWW-Authenticate;
+        add_header WWW-Authenticate "";
     }
 }
