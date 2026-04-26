@@ -10,7 +10,7 @@ limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
 
 server {
     listen 80;
-    server_name 7697795-ay86312.twc1.net www.7697795-ay86312.twc1.net;
+    server_name uni-match.ru www.uni-match.ru;
 
     # --- FRONTEND (React build) ---
     root   /usr/share/nginx/html;
@@ -25,7 +25,7 @@ server {
 
 server {
     listen 8000;
-    server_name 7697795-ay86312.twc1.net www.7697795-ay86312.twc1.net;
+    server_name uni-match.ru www.uni-match.ru;
 
     charset utf-8;
 
