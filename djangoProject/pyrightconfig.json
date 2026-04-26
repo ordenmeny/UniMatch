@@ -1,0 +1,11 @@
+{
+  "typeCheckingMode": "off",
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "reportUndefinedVariable": false,
+  "reportGeneralTypeIssues": false,
+  "reportOptionalMemberAccess": false,
+  "reportPrivateImportUsage": false,
+  "reportUnusedImport": "none",
+  "reportUnusedVariable": "none"
+}

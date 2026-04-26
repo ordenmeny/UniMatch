@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script
+        async src="https://telegram.org/js/telegram-widget.js?22"
+        data-telegram-login="Uni_Match_Bot"
+        data-size="large"
+        data-request-access="write"
+        data-onauth="onTelegramAuth(user)"
+></script>
+<script type="text/javascript">
+  function onTelegramAuth(user) {
+      const extendedData = {
+      {# Пользователь вошел в аккаунт. #}
+      {# user - объект пользователя телеграм. #}
+      {# передаем email пользователя сайта. #}
+      ...user,
+      email: "user_test@yandex.ru", // email из формы при регистрации. Пользователь уже должен быть создан.
+    };
+
+    fetch("https://user600096716-tdo2ryai.tunnel.vk-apps.com/api/tg-auth/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer access_token"
+      },
+      body: JSON.stringify(extendedData)
+    }).then(response => response.text())
+      .then(data => {
+        alert("Telegram привязан: " + data);
+      }).catch(err => {
+        alert("Ошибка привязки");
+        console.error(err);
+      });
+  }
+</script>
+
+</body>
+</html>
