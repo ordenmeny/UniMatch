@@ -12,6 +12,13 @@ server {
     listen 80;
     server_name uni-match.ru www.uni-match.ru;
 
+    # 👇 ВОТ ЭТО ДОБАВЬ (КРИТИЧНО)
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+        default_type "text/plain";
+        try_files $uri =404;
+    }
+
     # --- FRONTEND (React build) ---
     root   /usr/share/nginx/html;
     index  index.html;
@@ -19,52 +26,5 @@ server {
     location / {
         limit_req zone=general_limit burst=20 nodelay;
         try_files $uri /index.html;
-    }
-}
-
-
-server {
-    listen 8000;
-    server_name uni-match.ru www.uni-match.ru;
-
-    charset utf-8;
-
-    # Таймауты
-    client_body_timeout 10s;
-    client_header_timeout 10s;
-    send_timeout 10s;
-
-    # Буферы
-    client_body_buffer_size 128k;
-    client_header_buffer_size 1k;
-    large_client_header_buffers 4 4k;
-
-    # Ограничение соединений
-    limit_conn conn_limit 10;
-
-    # Код ответа при превышении лимитов
-    limit_req_status 429;
-
-    # Django media and static
-    location /media/  {
-        alias /vol/media/;
-    }
-
-    location /static/ {
-        alias /vol/static/;
-    }
-
-    # Django (uWSGI)
-    location / {
-        limit_req zone=general_limit burst=20 nodelay;
-        limit_req zone=write_limit burst=10 nodelay;
-
-        uwsgi_pass ${APP_HOST}:${APP_PORT};
-        include /etc/nginx/uwsgi_params;
-
-        client_max_body_size 40M;
-
-        uwsgi_read_timeout 60s;
-        uwsgi_send_timeout 60s;
     }
 }
