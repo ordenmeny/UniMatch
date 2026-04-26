@@ -1,0 +1,17 @@
+.WeMadeService {
+    background-color: unset;
+    gap: 0.5em;
+    & > * {
+        background-color: var(--BG_DARKGRAY);
+        border-radius: 1em;
+    }
+    img {
+        object-position: left;
+    }
+}
+
+@media (width < 900px) {
+    .WeMadeService img {
+        display: none;
+    }
+}

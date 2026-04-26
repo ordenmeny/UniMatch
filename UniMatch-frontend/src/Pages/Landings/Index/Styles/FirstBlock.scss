@@ -1,0 +1,83 @@
+.FirstBlock {
+    font-size: 64px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.2em;
+    height: 65vh;
+    max-height: 800px;
+    background: url("../Assets/FirstBlock.png") no-repeat center top;
+    padding: 0.75em;
+    border-radius: 32px;
+    margin-bottom: 0.375em;
+    h1 {
+        color: var(--PRIMARY_LIME);
+        text-shadow: 1px 1px 0.187em rgba(0, 0, 0, 0.3);
+        line-height: 90%;
+        font-weight: 600;
+    }
+    .Link {
+        font-size: 48px;
+        padding: 0.1em 2em;
+        color: var(--PRIMARY_LIME);
+        font-weight: 600;
+        background-color: var(--PRIMARY_BLACK);
+        border-radius: 0.5em;
+        text-align: center;
+    }
+}
+
+@media (width < 1360px) {
+    .FirstBlock {
+        font-size: 54px;
+        // flex-direction: column;
+        // align-items: start;
+        // .Link {
+        //     align-self: end;
+        // }
+    }
+}
+@media (width < 1200px) {
+    .FirstBlock {
+        font-size: 45px;
+    }
+}
+@media (width < 1060px) {
+    .FirstBlock {
+        font-size: 48px;
+        flex-direction: column;
+        align-items: start;
+        .Link {
+            align-self: end;
+        }
+    }
+}
+@media (width < 800px) {
+    .FirstBlock .Link {
+        width: 100%;
+    }
+}
+
+@media (width < 700px) {
+    .FirstBlock {
+        font-size: 41px;
+        .Link {
+            font-size: 40px;
+        }
+    }
+}
+
+@media (width < 600px) {
+    .FirstBlock {
+        font-size: 36px;
+        .Link {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (width < 550px) {
+    .FirstBlock {
+        font-size: 32px;
+    }
+}

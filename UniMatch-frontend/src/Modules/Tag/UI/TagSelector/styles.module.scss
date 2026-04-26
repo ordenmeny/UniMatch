@@ -1,0 +1,40 @@
+.TagSelector {
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    font-size: var(--fz-p);
+    gap: 0.5em;
+    overflow-y: scroll;
+    padding-right: 5px;
+    padding-bottom: 1em;
+    position: relative;
+    input {
+        display: none;
+    }
+    label {
+        color: var(--PRIMARY_LIGHTGRAY);
+        background-color: var(--BG_GRAY);
+        padding: 0.4em 1.2em;
+        border-radius: 0.9em;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+        &:has(input:checked) {
+            background-color: var(--PRIMARY_LIME);
+            color: var(--PRIMARY_BLACK);
+        }
+    }
+    p {
+        font-size: var(--fz-p);
+        color: var(--STATUS_RED);
+    }
+}
+
+@media (width < 1000px) {
+    .TagSelector {
+        grid-template-columns: 1fr;
+    }
+}

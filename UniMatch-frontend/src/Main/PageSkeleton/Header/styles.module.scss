@@ -1,0 +1,83 @@
+.Header {
+    background-color: var(--PRIMARY_LIME);
+    height: 60px;
+    border-radius: 32px;
+    margin-top: 24px;
+    margin-bottom: 19px;
+    padding: 9px 39px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    height: 100%;
+    font-size: calc(var(--fz-h2) * 0.75);
+    color: var(--BG_DARKGRAY);
+    font-weight: 500;
+    cursor: pointer;
+    .Logo {
+        height: 100%;
+    }
+    .Separator {
+        width: 1px;
+        height: 100%;
+        background-color: var(--BG_DARKGRAY);
+    }
+    .Panel {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        font-size: 0.7em;
+        img {
+            height: 1.5em;
+            width: 1.5em;
+            border-radius: 1em;
+        }
+        span {
+            text-wrap: wrap;
+        }
+    }
+}
+
+.Right {
+    font-size: 23px;
+}
+.BurgerNavbar {
+    display: none;
+}
+
+@media (width < 1400px) {
+    .Right {
+        font-size: 18px;
+    }
+}
+
+@media (width < 1000px) {
+    .Right {
+        font-size: 18px;
+    }
+    .Navbar {
+        display: none !important;
+    }
+    .BurgerNavbar {
+        display: unset !important;
+    }
+}
+
+@media (width < 500px) {
+    .Header {
+        padding: 9px 18px;
+        margin-top: 18px;
+    }
+
+    .Left {
+        gap: 12.6px; // 18 * 0.75
+    }
+    .Logo {
+        height: 70%;
+    }
+}

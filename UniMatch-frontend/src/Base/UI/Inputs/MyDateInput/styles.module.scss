@@ -1,0 +1,33 @@
+.Label {
+    position: relative;
+    &:focus-within .Placeholder {
+        display: none;
+    }
+}
+
+.Input {
+    line-height: 100%;
+    width: 100%;
+    border: 1px solid var(--PRIMARY_LIGHTGRAY);
+    color: transparent;
+    padding: 0.8em 1.2em;
+    border-radius: 0.9em;
+    color-scheme: dark;
+    background-color: transparent;
+    &:focus {
+        border-color: var(--PRIMARY_WHITE);
+        color: var(--PRIMARY_WHITE) !important;
+    }
+    &::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+}
+
+.Placeholder {
+    position: absolute;
+    left: 1.2em;
+    bottom: 0.8em;
+    color: var(--PRIMARY_LIGHTGRAY);
+    text-decoration: underline;
+    pointer-events: none;
+}

@@ -1,0 +1,24 @@
+html {
+    font-family: "Golos-Text";
+    color: var(--PRIMARY_WHITE);
+    background-color: var(--PRIMARY_BLACK);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px var(--BG_GRAY);
+    border-radius: 3px;
+
+    // Add Border on Track
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: var(--PRIMARY_LIGHTGRAY);
+}

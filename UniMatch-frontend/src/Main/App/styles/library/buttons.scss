@@ -1,0 +1,62 @@
+*[class^="Button"] {
+    padding: 0.8em 2em;
+    border-radius: 0.9em;
+    border: 2px solid transparent;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    text-wrap: nowrap;
+    &:not(:disabled):active {
+        opacity: 0.9;
+    }
+    &:disabled {
+        cursor: auto;
+        opacity: 0.8 !important;
+    }
+}
+@media (hover: hover) and (pointer: fine) {
+    *[class^="Button"]:not(:disabled):hover {
+        opacity: 0.8;
+    }
+}
+.ButtonTblack {
+    border-color: var(--PRIMARY_BLACK);
+    color: var(--PRIMARY_BLACK);
+    background-color: transparent;
+    &:not(:disabled):active {
+        color: var(--PRIMARY_BLACK);
+    }
+}
+.ButtonDarkgray {
+    border-color: var(--BG_GRAY);
+    color: var(--PRIMARY_LIGHTGRAY);
+    background-color: var(--BG_GRAY);
+    &:not(:disabled):active {
+        color: var(--PRIMARY_LIGHTGRAY);
+    }
+}
+.ButtonGray {
+    border-color: transparent;
+    color: var(--PRIMARY_BLACK);
+    background-color: var(--PRIMARY_LIGHTGRAY);
+    &:not(:disabled):active {
+        color: var(--PRIMARY_BLACK);
+    }
+}
+.ButtonTgray {
+    border-color: var(--PRIMARY_LIGHTGRAY);
+    color: var(--PRIMARY_LIGHTGRAY);
+    background-color: transparent;
+    &:not(:disabled):active {
+        color: var(--PRIMARY_LIGHTGRAY);
+    }
+}
+.ButtonWhite {
+    border-color: var(--PRIMARY_WHITE);
+    color: var(--PRIMARY_BLACK);
+    background-color: var(--PRIMARY_WHITE);
+    &:not(:disabled):active {
+        color: var(--PRIMARY_BLACK);
+    }
+}

@@ -1,0 +1,21 @@
+@media (width > 1000px) {
+    .ResetPassword {
+        background-image: url("./Assets/bg.png");
+    }
+}
+
+.Buttons {
+    margin-top: 1em;
+}
+
+.Buttons > *:not(:only-child) {
+    min-width: 30%;
+}
+
+.ForgotPassword {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    color: var(--PRIMARY_LIGHTGRAY);
+    text-decoration: underline;
+}

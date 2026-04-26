@@ -1,0 +1,52 @@
+:root {
+    --fz-h1: 60px;
+    --fz-h2: 48px;
+    --fz-p: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    line-height: 100%;
+    margin-bottom: 0.75em;
+}
+
+h1 {
+    font-size: var(--fz-h1);
+}
+
+h2 {
+    font-size: var(--fz-h2);
+}
+
+p {
+    font-size: var(--fz-p);
+}
+
+@media (width < 1000px) {
+    :root {
+        --fz-h1: 56px;
+        --fz-h2: 42px;
+        --fz-p: 22px;
+    }
+}
+
+@media (width < 600px) {
+    :root {
+        --fz-h1: 48px;
+        --fz-h2: 36px;
+        --fz-p: 20px;
+    }
+}
+
+@media (width < 500px) {
+    :root {
+        --fz-h1: 42px;
+        --fz-h2: 30px;
+        --fz-p: 18px;
+    }
+}

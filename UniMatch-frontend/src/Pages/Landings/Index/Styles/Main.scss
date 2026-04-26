@@ -1,0 +1,77 @@
+.Landing {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        font-size: 40px;
+        padding-left: 1em;
+        padding-bottom: 0.5em;
+        color: var(--PRIMARY_LIGHTGRAY);
+        font-weight: 600;
+    }
+}
+
+.TextBlock {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    border-radius: 1em;
+    overflow: hidden;
+    background-color: var(--BG_DARKGRAY);
+    margin-bottom: 2.5em;
+    img {
+        width: 50%;
+        object-fit: cover;
+        object-position: center;
+    }
+    p {
+        padding: 1em 1.5em;
+    }
+}
+
+@media (width < 1360px) {
+    .Landing h2 {
+        font-size: 36px;
+    }
+    .TextBlock {
+        font-size: 18px;
+    }
+}
+
+@media (width < 1000px) {
+    .Landing h2 {
+        font-size: 32px;
+    }
+    .TextBlock {
+        font-size: 16px;
+    }
+}
+
+@media (width < 900px) {
+    .Landing h2 {
+        font-size: 28px;
+    }
+    .TextBlock {
+        &:has(> img + p) {
+            flex-direction: column;
+        }
+        &:has(> p + img) {
+            flex-direction: column-reverse;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        p {
+            padding-bottom: 2.5em;
+        }
+        
+    }
+}
+
+@media (width < 600px) {
+    .Landing h2 {
+        padding-left: 0.2em;
+        font-size: 24px;
+    }
+}

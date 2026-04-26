@@ -1,0 +1,37 @@
+.FirstBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 65vh;
+    max-height: 800px;
+    background-color: var(--BG_GRAY);
+    padding: 0.75em;
+    border-radius: 32px;
+    font-size: 64px;
+    h1 {
+        color: var(--PRIMARY_LIME);
+        line-height: 90%;
+        font-weight: 600;
+    }
+    margin-bottom: 0.82em;
+    
+}
+
+@media (width < 1000px) {
+    .FirstBlock {
+        font-size: 48px;
+        max-height: 500px;
+    }
+}
+
+@media (width < 800px) {
+    .FirstBlock {
+        font-size: 36px;
+    }
+}
+
+@media (width < 500px) {
+    .FirstBlock {
+        font-size: 29px;
+    }
+}

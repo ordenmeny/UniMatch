@@ -1,0 +1,28 @@
+.CarouselIndicator {
+    display: flex;
+    gap: 2%;
+    div {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        overflow: hidden;
+        background-color: var(--BG_GRAY);
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--PRIMARY_LIGHTGRAY);
+            transition: left 0.5s ease;
+        }
+        &:not(.Filled)::before {
+            left: -100%;
+        }
+    }
+}
+
+.Filled::before {
+    left: 0;
+    background-size: 100% 100%;
+}

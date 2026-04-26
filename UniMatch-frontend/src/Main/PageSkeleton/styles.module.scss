@@ -1,0 +1,20 @@
+.PageSkeleton {
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    max-width: 1920px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+@media (width < 800px) {
+    .PageSkeleton {
+        padding: 0 20px;
+    }
+}
+
+@media (width < 500px) {
+    .PageSkeleton {
+        padding: 0 12px;
+    }
+}

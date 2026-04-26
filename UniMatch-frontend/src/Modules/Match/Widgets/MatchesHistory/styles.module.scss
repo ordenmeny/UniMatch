@@ -1,0 +1,74 @@
+.Container {
+    color: var(--PRIMARY_LIGHTGRAY);
+}
+
+.MatchesHistory {
+    font-size: calc(var(--fz-p));
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    padding-left: 1em;
+    --imageSize: 2.5em;
+    margin-bottom: 0.5em;
+    & > li {
+        text-decoration: none;
+        color: inherit;
+        display: grid;
+        grid-template-columns: var(--imageSize) 1fr 3fr;
+        gap: 1.25em;
+        align-items: center;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .Image {
+        width: var(--imageSize);
+        height: var(--imageSize);
+        border-radius: var(--imageSize);
+    }
+
+    .Name {
+        text-wrap: nowrap;
+        padding-right: 2em;
+    }
+    .Tags {
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    & > button {
+        color: var(--PRIMARY_LIGHTGRAY);
+        text-decoration: underline;
+        padding: 0.3em;
+        width: fit-content;
+    }
+}
+
+@media (width < 1000px) {
+    .MatchesHistory {
+        padding-left: 0;
+        --imageSize: 3em;
+        & > li {
+            align-items: start;
+            grid-template-columns: var(--imageSize) 1fr;
+            grid-template-rows: auto auto;
+            gap: 0 1em;
+        }
+        .Image {
+            grid-row: span 3 / span 3;
+        }
+
+        .Name {
+            // margin-bottom: 0.2em;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .Tags {
+            grid-row: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+    }
+}
