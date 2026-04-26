@@ -76,6 +76,7 @@ services:
       - media-data:/vol/media
       - frontend_dist:/usr/share/nginx/html:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
+      - /var/www/certbot:/var/www/certbot
 
 volumes:
   db-data:
