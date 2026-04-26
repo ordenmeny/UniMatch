@@ -177,8 +177,8 @@ DJOSER = {
     "TOKEN_MODEL": None,
     "PASSWORD_RESET_CONFIRM_URL": "password-reset/{uid}/{token}",
     "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": True,
-    "DOMAIN": "unimatch.ru",
-    "SITE_NAME": "unimatch.ru",
+    "DOMAIN": "uni-match.ru",
+    "SITE_NAME": "uni-match.ru",
 }
 
 SIMPLE_JWT = {
