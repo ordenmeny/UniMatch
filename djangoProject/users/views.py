@@ -145,8 +145,8 @@ class CustomPasswordResetEmail(PasswordResetEmail):
 
     def get_context_data(self):
         context = super().get_context_data()
-        context["domain"] = "unimatch.ru"
-        context["site_name"] = "unimatch.ru"
+        context["domain"] = "uni-match.ru"
+        context["site_name"] = "uni-match.ru"
         context["protocol"] = "https"
         return context
 
