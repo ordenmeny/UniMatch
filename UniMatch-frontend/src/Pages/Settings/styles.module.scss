@@ -1,0 +1,20 @@
+.Settings {
+    & > p {
+        color: var(--STATUS_RED);
+    }
+}
+.SubmitBtn {
+    width: fit-content;
+}
+
+.ProfilePanel {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+@media (width < 1000px) {
+    .SubmitBtn {
+        width: 100%;
+    }
+}

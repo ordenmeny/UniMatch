@@ -10,27 +10,29 @@ limit_conn_zone $binary_remote_addr zone=conn_limit:10m;
 
 server {
     listen 80;
-    server_name unimatch.ru www.unimatch.ru;
+    server_name uni-match.ru www.uni-match.ru;
 
-    # Все запросы на 80 → переадресация на https
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
     location / {
         return 301 https://$host$request_uri;
     }
 }
 
-
 server {
     listen 443 ssl;
-    server_name unimatch.ru www.unimatch.ru;
+    server_name uni-match.ru www.uni-match.ru;
 
-    ssl_certificate /etc/letsencrypt/live/unimatch.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/unimatch.ru/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/uni-match.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/uni-match.ru/privkey.pem;
 
     # Таймауты для защиты от медленных запросов
     client_body_timeout 10s;
     client_header_timeout 10s;
     send_timeout 10s;
-    
+
     # Ограничение размера буферов (защита от переполнения)
     client_body_buffer_size 128k;
     client_header_buffer_size 1k;
@@ -38,7 +40,7 @@ server {
 
     # Ограничение одновременных соединений с одного IP
     limit_conn conn_limit 10;
-    
+
     # Код ответа при превышении лимитов
     limit_req_status 429;
 
@@ -62,13 +64,12 @@ server {
     #}
 }
 
-
 server {
     listen 8000 ssl;
-    server_name unimatch.ru www.unimatch.ru;
+    server_name uni-match.ru www.uni-match.ru;
 
-    ssl_certificate /etc/letsencrypt/live/unimatch.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/unimatch.ru/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/uni-match.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/uni-match.ru/privkey.pem;
 
     charset     utf-8;
 
@@ -76,7 +77,7 @@ server {
     client_body_timeout 10s;
     client_header_timeout 10s;
     send_timeout 10s;
-    
+
     # Ограничение размера буферов
     client_body_buffer_size 128k;
     client_header_buffer_size 1k;
@@ -84,7 +85,7 @@ server {
 
     # Ограничение одновременных соединений с одного IP
     limit_conn conn_limit 10;
-    
+
     # Код ответа при превышении лимитов
     limit_req_status 429;
 
@@ -102,7 +103,7 @@ server {
     location / {
         # Общее ограничение для всех запросов
         limit_req zone=general_limit burst=20 nodelay;
-        
+
         # Дополнительное жесткое ограничение для POST/PUT/PATCH/DELETE: 5 req/s
         limit_req zone=write_limit burst=10 nodelay;
 

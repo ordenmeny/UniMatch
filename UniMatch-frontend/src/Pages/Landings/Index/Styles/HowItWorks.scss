@@ -1,0 +1,14 @@
+.HowItWorks {
+    img {
+        padding: 1.2em;
+        padding-right: 0;
+        object-fit: contain;
+    }
+}
+
+@media (width < 900px) {
+    .HowItWorks img {
+        padding-right: 1.2em;
+        padding-bottom: 0;
+    }
+}

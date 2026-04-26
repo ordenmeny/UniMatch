@@ -1,0 +1,8 @@
+[project]
+name = "unimatch"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.13"
+dependencies = [
+    "psycopg[binary]>=3.2.9",
+]

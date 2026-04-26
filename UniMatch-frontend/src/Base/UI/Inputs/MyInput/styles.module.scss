@@ -1,0 +1,26 @@
+.MyLabel {
+}
+.MyInput {
+    line-height: 100%;
+    width: 100%;
+    border: 1px solid var(--PRIMARY_LIGHTGRAY);
+    color: var(--PRIMARY_WHITE);
+    padding: 0.8em 1.2em;
+    border-radius: 0.9em;
+    color-scheme: dark;
+    background-color: transparent;
+    &::placeholder,
+    &:invalid::-webkit-datetime-edit-year-field,
+    &:invalid::-webkit-datetime-edit-month-field,
+    &:invalid::-webkit-datetime-edit-day-field,
+    &:invalid::-webkit-datetime-edit-text {
+        color: var(--PRIMARY_LIGHTGRAY);
+        text-decoration: underline;
+    }
+    &:focus {
+        border-color: var(--PRIMARY_WHITE);
+    }
+    &::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+}

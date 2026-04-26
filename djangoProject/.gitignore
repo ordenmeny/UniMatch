@@ -1,7 +1,3 @@
-backup_postgres.sh
-bot/
-yandex-auth-test/
-
 # Django #
 *.log
 *.pot
@@ -22,7 +18,6 @@ media_dev
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-.vscode/
 
 # AWS User-specific
 .idea/**/aws.xml
@@ -145,4 +140,9 @@ GitHub.sublime-settings
 
 .DS_Store
 .idea
-.vscode
+
+# Django migrations
+*/migrations/*
+!*/migrations/__init__.py
+
+.vscode/

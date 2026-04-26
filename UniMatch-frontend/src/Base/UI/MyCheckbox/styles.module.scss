@@ -1,0 +1,50 @@
+.Checkbox {
+    --text-color: var(--PRIMARY_LIGHTGRAY);
+    --checkbox-color: var(--PRIMARY_LIGHTGRAY);
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+    font-size: calc(var(--fz-p) * 0.9);
+    color: var(--text-color);
+    &:hover {
+        --checkbox-color: var(--PRIMARY_WHITE);
+        input[type="checkbox"] {
+            border-color: var(--checkbox-color);
+        }
+    }
+    input[type="checkbox"] {
+        cursor: pointer;
+        position: relative;
+        top: 0.12em;
+        height: 1em;
+        min-width: 1em;
+        margin: 0;
+        margin-right: 0.8em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 2px solid var(--checkbox-color);
+        border-radius: 0.3em;
+        transition: all 0.2s ease;
+        &:before {
+            content: "";
+            mask: url("./Assets/checkmark.svg") no-repeat center / contain;
+            background-color: var(--checkbox-color);
+            transition: all 0.2s ease;
+            position: absolute;
+            height: 60%;
+            width: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-0.02turn) scale(0.7);
+            opacity: 0;
+        }
+
+        &:checked {
+            --checkbox-color: var(--PRIMARY_WHITE);
+            &::before {
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(0turn) scale(1);
+            }
+        }
+    }
+}

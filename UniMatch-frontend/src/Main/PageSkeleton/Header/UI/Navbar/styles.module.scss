@@ -1,0 +1,14 @@
+.Navbar {
+    display: flex;
+    gap: 2.5em;
+    text-wrap: nowrap;
+    color: var(--PRIMARY_BLACK);
+    a {
+        color: var(--PRIMARY_BLACK);
+        text-decoration: none;
+    }
+}
+
+.BoldLink {
+    font-weight: 500;
+}

@@ -1,0 +1,36 @@
+.Algorithm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 24px;
+    gap: 1em;
+    grid-template-rows: 1fr;
+    padding: 2em;
+    background-color: var(--BG_DARKGRAY);
+    border-radius: 32px;
+    margin-bottom: 2.3em;
+}
+@media (width < 1000px) {
+    .Algorithm {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2em;
+        padding-bottom: 3em;
+        font-size: 20px;
+    }
+}
+@media (width < 800px) {
+    .Algorithm {
+        gap: 1.5em;
+        font-size: 18px;
+    }
+}
+@media (width < 600px) {
+    .Algorithm {
+        // gap: 14px;
+        // padding: 21px;
+        // padding-bottom: 35px;
+        font-size: 16px;
+        padding: 1.5em;
+        padding-bottom: 2em;
+    }
+}

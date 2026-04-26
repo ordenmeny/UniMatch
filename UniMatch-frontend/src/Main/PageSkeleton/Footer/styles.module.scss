@@ -1,0 +1,85 @@
+.Footer {
+    background-color: var(--BG_DARKGRAY);
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 3.3em 2.6em 6.7em; // 60/18 48/18 122/18
+    border-radius: 32px 32px 0 0;
+
+    margin-top: 50px;
+}
+
+.Logo {
+    height: 7.7em; // 140/18
+}
+
+.Right {
+    a,
+    a:link,
+    a:visited,
+    span {
+        color: var(--PRIMARY_LIGHTGRAY);
+        text-decoration: underline;
+    }
+    span {
+        text-decoration: none;
+    }
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1em 3em;
+
+    *:nth-child(6) {
+        grid-row-start: 3;
+    }
+    *:nth-child(7) {
+        grid-row-start: 4;
+    }
+
+    a::after {
+        content: " →";
+    }
+}
+
+@media (width < 1200px) {
+    .Footer {
+        font-size: 16px;
+    }
+}
+@media (width < 1000px) {
+    .Footer {
+        font-size: 12px;
+    }
+    .Logo {
+        height: 6.2em; // (140/18)*0.8
+    }
+}
+@media (width < 800px) {
+    .Footer {
+        font-size: 10px;
+        padding: 2.64em 2.08em 5.36em; // (60/18)*0.8 (48/18)*0.8 (122/18)*0.8
+    }
+}
+@media (width < 650px) {
+    .Footer {
+        font-size: 16px;
+        flex-direction: column;
+        align-items: start;
+        gap: 3em;
+    }
+    .Right {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        *:nth-child(5) {
+            grid-row-start: 6;
+        }
+
+        *:nth-child(6) {
+            grid-row-start: 8;
+        }
+        *:nth-child(7) {
+            grid-row-start: 9;
+        }
+    }
+}

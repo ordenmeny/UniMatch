@@ -1,0 +1,69 @@
+.Team {
+    --ItemHeight: 136px;
+    max-width: 1200px;
+    font-size: 54px;
+    margin-bottom: 2.2em; //149/16
+    padding: 0 1.1em; //48/16
+    h3 {
+        margin-bottom: 0.75em;
+    }
+    .TeamList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: calc(var(--ItemHeight) * 0.25);
+    }
+    .TeamItem {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        height: var(--ItemHeight);
+        div {
+            font-size: calc(var(--ItemHeight) * 0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6em;
+            padding: calc(var(--ItemHeight) * 0.1) 0;
+        }
+        img {
+            height: 100%;
+            border-radius: 500px;
+        }
+        span {
+            text-decoration: underline;
+        }
+        p {
+            font-size: calc(var(--ItemHeight) * 0.14);
+            color: var(--PRIMARY_LIGHTGRAY);
+            text-transform: uppercase;
+            text-wrap: nowrap;
+        }
+    }
+}
+
+@media (width < 1000px) {
+    .Team {
+        --ItemHeight: 120px;
+        font-size: 41px;
+    }
+}
+@media (width < 900px) {
+    .Team {
+        font-size: 34px;
+    }
+    .TeamList {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+}
+@media (width < 600px) {
+    .Team {
+        font-size: 28px;
+    }
+}
+@media (width < 470px) {
+    .Team {
+        --ItemHeight: 90px;
+        font-size: 24px;
+    }
+}

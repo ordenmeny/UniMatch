@@ -1,0 +1,51 @@
+.Modal {
+    --burger-color: var(--PRIMARY_WHITE) !important;
+    position: fixed;
+    width: 100vw;
+    height: 80vh;
+    top: -100vh;
+    left: 0;
+    transition: 0.5s ease;
+    background-color: var(--BG_DARKGRAY);
+    border-radius: 0 0 32px 32px;
+    z-index: 1000000;
+    &.Open {
+        top: 0;
+    }
+    nav {
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4em;
+        a {
+            color: var(--PRIMARY_WHITE);
+            text-decoration: none;
+        }
+        color: var(--PRIMARY_WHITE);
+        text-wrap: nowrap;
+        & > *:not(:last-child) {
+            position: relative;
+            &::after {
+                content: "";
+                width: 5em;
+                height: 1px;
+                position: absolute;
+                bottom: -2em;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: var(--PRIMARY_LIME);
+            }
+        }
+    }
+}
+
+.ModalBurger {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.BoldLink {
+    font-weight: 500;
+}

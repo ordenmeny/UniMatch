@@ -1,0 +1,17 @@
+@media (width > 1000px) {
+    .Login {
+        background-image: url("./Assets/bg.png");
+    }
+}
+
+.Buttons > *:not(:only-child) {
+    min-width: 30%;
+}
+
+.ForgotPassword {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    color: var(--PRIMARY_LIGHTGRAY);
+    text-decoration: underline;
+}

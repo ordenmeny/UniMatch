@@ -1,0 +1,30 @@
+@media (width > 1000px) {
+    .Register {
+        background-image: url("./Assets/bg.png");
+    }
+}
+
+@media (width < 1000px) {
+    .Register :global(.buttons) {
+        flex-direction: column-reverse !important;
+    }
+}
+
+.Buttons > *:not(:only-child) {
+    width: 100%;
+}
+
+.Form {
+}
+
+.CarouselTape {
+    & > * {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.TagSelector {
+    max-height: 300px;
+    margin-bottom: 1em;
+}

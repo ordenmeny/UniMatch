@@ -1,0 +1,19 @@
+.Carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+    min-height: 50px;
+}
+
+.Tape {
+    display: flex;
+    position: relative;
+    top: 0;
+    width: 100%;
+    transition: 0.5s left ease;
+    & > * {
+        min-width: 100%;
+    }
+    
+}
